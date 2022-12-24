@@ -46,7 +46,7 @@ dependencies:
   dartz: ^0.10.1
   get_it: ^7.2.0
   injectable: ^1.5.3
-  
+  freezed_annotation: 
 
 
 dev_dependencies:
