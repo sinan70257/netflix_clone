@@ -3,8 +3,10 @@ import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/core/constants.dart';
 
 class VideoWidget extends StatelessWidget {
+  final String url;
   const VideoWidget({
     Key? key,
+    required this.url,
   }) : super(key: key);
 
   @override
@@ -15,8 +17,26 @@ class VideoWidget extends StatelessWidget {
           width: double.infinity,
           height: 200,
           child: Image.network(
-            newAndHotImage,
+            url,
             fit: BoxFit.cover,
+            errorBuilder: (_, a, trace) {
+              return const Center(
+                  child: Icon(
+                Icons.wifi_off,
+                color: kwhitecolor,
+              ));
+            },
+            loadingBuilder: (_, child, progress) {
+              if (progress == null) {
+                return child;
+              } else {
+                return const Center(
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2,
+                  ),
+                );
+              }
+            },
           ),
         ),
         Positioned(

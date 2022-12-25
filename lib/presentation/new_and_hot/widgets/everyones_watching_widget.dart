@@ -6,8 +6,14 @@ import 'package:netflix/presentation/new_and_hot/widgets/video_widget.dart';
 import '../../../core/colors/colors.dart';
 
 class EveronesWatchingWidget extends StatelessWidget {
+  final String postePath;
+  final String movieName;
+  final String description;
   const EveronesWatchingWidget({
     Key? key,
+    required this.postePath,
+    required this.movieName,
+    required this.description,
   }) : super(key: key);
 
   @override
@@ -16,21 +22,25 @@ class EveronesWatchingWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         kheight,
-        const Text(
-          "Friends",
-          style: TextStyle(
+        Text(
+          movieName,
+          style: const TextStyle(
               fontSize: 20, color: kwhitecolor, fontWeight: FontWeight.bold),
         ),
         kheight,
-        const Text(
-          "This hit sitcom follows the merry misadventures of six 20- something pals as they navigate the pitfalls of woek, life and love in 1990 Manhattan.",
-          style: TextStyle(
+        Text(
+          description,
+          maxLines: 4,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(
             fontSize: 16,
             color: kGreyColor,
           ),
         ),
         khHeight50,
-        const VideoWidget(),
+        VideoWidget(
+          url: postePath,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: const [
