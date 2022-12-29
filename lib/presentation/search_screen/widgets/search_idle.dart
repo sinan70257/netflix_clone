@@ -83,16 +83,20 @@ class TopSearchItemTile extends StatelessWidget {
             ),
           ),
         ),
+        kwidth,
         const CircleAvatar(
           backgroundColor: kwhitecolor,
-          radius: 28,
+          radius: 26,
           child: CircleAvatar(
             backgroundColor: kblackColor,
-            radius: 26,
-            child: Icon(
-              CupertinoIcons.play_fill,
-              size: 30,
-              color: kwhitecolor,
+            radius: 24,
+            child: Padding(
+              padding: EdgeInsets.only(left: 4.0),
+              child: Icon(
+                CupertinoIcons.play_fill,
+                size: 23,
+                color: kwhitecolor,
+              ),
             ),
           ),
         )

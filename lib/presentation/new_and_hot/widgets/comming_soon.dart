@@ -57,6 +57,7 @@ class CommingSoon extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               VideoWidget(url: posterPath),
+              kheight,
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

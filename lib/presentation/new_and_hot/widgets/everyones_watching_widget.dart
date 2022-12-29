@@ -41,6 +41,7 @@ class EveronesWatchingWidget extends StatelessWidget {
         VideoWidget(
           url: postePath,
         ),
+        kheight,
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: const [

@@ -67,32 +67,32 @@ class ScreenHome extends StatelessWidget {
                     final _southIndianMovie = state.southIndianMovieList
                         .map((m) => '$imageAppendUrl${m.posterPath}')
                         .toList();
-                    _southIndianMovie.shuffle();
+                    // _southIndianMovie.shuffle();
                     // top 10 tv shows
                     final _top10TvShow = state.trendingTvList.map((t) {
                       return '$imageAppendUrl${t.posterPath}';
                     }).toList();
-                    _top10TvShow.shuffle();
+                    // _top10TvShow.shuffle();
 
                     return ListView(
                       children: [
-                        BackgroundCard(),
+                        const BackgroundCard(),
                         MainTitleCard(
                           title: "Released in the past year",
                           posterList: _releasedPastYear.sublist(0, 10),
                         ),
                         MainTitleCard(
                           title: "Trending Now",
-                          posterList: _trendingNow.sublist(0, 10),
+                          posterList: _trendingNow.sublist(9, 19),
                         ),
                         NumberTitleCard(postersList: _top10TvShow),
                         MainTitleCard(
                           title: "Tense Drama",
-                          posterList: _tenseDrama.sublist(0, 10),
+                          posterList: _tenseDrama.sublist(10, 20),
                         ),
                         MainTitleCard(
                           title: "South Indian Cinema",
-                          posterList: _southIndianMovie.sublist(0, 10),
+                          posterList: _southIndianMovie.sublist(5, 15),
                         ),
                       ],
                     );
@@ -100,7 +100,7 @@ class ScreenHome extends StatelessWidget {
                 ),
                 scrollNotifier.value == true
                     ? AnimatedContainer(
-                        duration: Duration(milliseconds: 5000),
+                        duration: const Duration(milliseconds: 5000),
                         width: double.infinity,
                         height: 90,
                         color: Colors.black.withOpacity(0.2),
